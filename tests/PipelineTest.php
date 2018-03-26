@@ -1,5 +1,4 @@
 <?php
-
 use IceCreamPipeline\Container;
 
 use IceCreamPipeline\Tests\Stubs\AddOne;
