@@ -1,0 +1,38 @@
+{
+    "name": "ice-cream/pipeline",
+    "type": "library",
+    "description": "ice-cream pipeline is used to pass something through a pipeline and have it processed and passed back out.",
+    "keywords": ["library", "pipeline"],
+    "homepage": "http://adambalan.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Balan",
+            "email": "adamkylebalan@gmail.com",
+            "homepage": "https://github.com/ice-cream-pipeline"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.0.2",
+        "phpunit/php-code-coverage": "6.0.*",
+        "dcramble/phpdoc-md" : "~0.1.1",
+        "phpdocumentor/phpdocumentor": "2.9.0",
+        "codedungeon/phpunit-result-printer": "^0.6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "IceCreamPipeline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IceCreamPipeline\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "generate:docs": "vendor/bin/phpdoc -d ./src -t docs/ --template='xml' && rm -r docs/phpdoc-cache-* && vendor/bin/phpdocmd docs/structure.xml docs/"
+    }
+}

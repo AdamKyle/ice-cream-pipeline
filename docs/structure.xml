@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="Contracts/Pipeline.php" generated-path="Contracts.Pipeline.html" hash="b1bdd97ba4f177e336a9083505ea6d68" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="IceCreamPipeline\Contracts" line="12" package="Default">
+      <name>Pipeline</name>
+      <full_name>\IceCreamPipeline\Contracts\Pipeline</full_name>
+      <docblock line="12">
+        <description>Basic pipeline infrastructure.</description>
+        <long-description>We pass an item, what ever that may be, through a set of pipes
+optionally calling on a specific method that all pipes must have
+and then, optionally, we can do something once all is done and returned.</long-description>
+        <tag name="package" line="12" description="Default"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="20" package="Default">
+        <name>pass</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::pass()</full_name>
+        <docblock line="20">
+          <description>Pass an item into the pipeline.</description>
+          <long-description></long-description>
+          <tag name="param" line="20" description="&lt;p&gt;item&lt;/p&gt;" type="mixed" variable="$item">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="20" description="" type="\IceCreamPipeline\Contracts\Pipeline">
+            <type>\IceCreamPipeline\Contracts\Pipeline</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="28" package="Default">
+        <name>through</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::through()</full_name>
+        <docblock line="28">
+          <description>The pipes to pass the item, through.</description>
+          <long-description></long-description>
+          <tag name="param" line="28" description="&lt;p&gt;pipes&lt;/p&gt;" type="mixed" variable="$pipes">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="28" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$pipes</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="37" package="Default">
+        <name>withMethod</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::withMethod()</full_name>
+        <docblock line="37">
+          <description>Optionally call a specific method that all pipes have.</description>
+          <long-description></long-description>
+          <tag name="param" line="37" description="&lt;p&gt;method&lt;/p&gt;" type="string" variable="$method">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="37" description="" type="\IceCreamPipeline\Contracts\Pipeline">
+            <type>\IceCreamPipeline\Contracts\Pipeline</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$method</name>
+          <default></default>
+          <type>\IceCreamPipeline\Contracts\string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="48" package="Default">
+        <name>process</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::process()</full_name>
+        <docblock line="48">
+          <description>Process the pipes.</description>
+          <long-description>itterate through each pipe either calling the method defined in
+`withMethod` or a predefined method on the abstract Pipe class
+called: `handle`.</long-description>
+          <tag name="return" line="48" description="" type="\IceCreamPipeline\Contracts\Pipeline">
+            <type>\IceCreamPipeline\Contracts\Pipeline</type>
+          </tag>
+          <tag name="fluent" description="This method is part of a fluent interface and will return the same instance"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="56" package="Default">
+        <name>getResponse</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::getResponse()</full_name>
+        <docblock line="56">
+          <description>Get the response from the process.</description>
+          <long-description>Instead of calling `then()` you can do: `-&gt;process()-&gt;getResponse();`
+to get the response of the pipeline.</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline\Contracts" line="66" package="Default">
+        <name>then</name>
+        <full_name>\IceCreamPipeline\Contracts\Pipeline::then()</full_name>
+        <docblock line="66">
+          <description>Optionally do something after all the pipes have finished.</description>
+          <long-description>The function takes one argument, that is the response from process
+fucntion.</long-description>
+          <tag name="param" line="66" description="&lt;p&gt;func&lt;/p&gt;" type="\IceCreamPipeline\Contracts\Closure" variable="$func">
+            <type>\IceCreamPipeline\Contracts\Closure</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$func</name>
+          <default></default>
+          <type>\Closure</type>
+        </argument>
+      </method>
+    </interface>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="37" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $method in withMethod()</error>
+      <error line="66" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $func in then()</error>
+    </parse_markers>
+    <source>eJyVVE1v2zAMvftX8JBDGqTNfRu6YTkMPQwLhgG79GBFpm1htiRIcrtg2H8fKclu43rp5kM+LPLx8fFR797b1haFFj16KyTCncS9Q9EflMVOabzfGx2ckMG/LYrdZlPABj4KryTYHAFK10744AYZBoc3FMFB3xGs8B6EBhWw38JjKwLgAzoI/KsXJzjilv44MzQtCPAYwNQR1zOCsUEZLbruBJI+lW7AaI6zKFVNDHoMrakSHAWkTOgHH6AVD8gYQvM56u0zNKKChKihMuANgyRo6p5RlKcDaotTHVJLGitualcoHdDVrNKoTvGrAHqiLvxs4PCsZ1ImGC4/aXWTw8boD1Y40UOvfmIVU6aDVJk06er8bhe/7XDsqPV60JL7iRqvV5x6RQOakfmWS3sgHnEaTCaNI+t+kVEexTmleHSRU4Zer2L+Aq8v55N9faY8zhnTGWHyH08xpf+3io8qtJ9j6joDrRLSAvmDMxKzlJHdXEIVyCYi4GRtFLKNoYBUhxZgtDND5IYrrMkfZAI9wpRPpEowjkSyDsewnBXFJqsefdzR6EuQHU16ROFSWL2BsiU/d1i+mPc/Gy21vV5Q5BMtLtNwdIcY7RFqZ/qkT0qaF73TPqCoeNtHKUre0vVVCScz5OUk0te3U9nr2wbD11yBWJQjGFm7mRMg4KW1W+7sHPeSWc8uDFHTmKNHJydEnwJNSPk2XhpnXfM2Pu2I+EHx8Z5xzdCjDttkeuUXtMwqjEj1IDWj/GV5953xdBPHYq8sKml+P4av+D0J8Lv4Aw2T3Bg=</source>
+  </file>
+  <file path="Pipeline.php" generated-path="Pipeline.html" hash="40458daf137e9bd33632ea3d989b100b" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="PipelineContract">\IceCreamPipeline\Contracts\Pipeline</namespace-alias>
+    <class final="false" abstract="false" namespace="IceCreamPipeline" line="16" package="Default">
+      <extends/>
+      <implements>\IceCreamPipeline\Contracts\Pipeline</implements>
+      <name>Pipeline</name>
+      <full_name>\IceCreamPipeline\Pipeline</full_name>
+      <docblock line="16">
+        <description>The pipeline is responsible for processing the payload.</description>
+        <long-description>We process the payload through a set of pipes. These pipes can have
+a specific method that gets called, or it defaults to `handle` method
+on that specific pipe.
+
+If you call `withMethod` all pipes must implement said method.</long-description>
+        <tag name="package" line="16" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="IceCreamPipeline" line="18" package="Default">
+        <name>$item</name>
+        <full_name>\IceCreamPipeline\Pipeline::item</full_name>
+        <default></default>
+        <docblock line="18">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="IceCreamPipeline" line="20" package="Default">
+        <name>$pipes</name>
+        <full_name>\IceCreamPipeline\Pipeline::pipes</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="IceCreamPipeline" line="22" package="Default">
+        <name>$method</name>
+        <full_name>\IceCreamPipeline\Pipeline::method</full_name>
+        <default></default>
+        <docblock line="22">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="IceCreamPipeline" line="24" package="Default">
+        <name>$response</name>
+        <full_name>\IceCreamPipeline\Pipeline::response</full_name>
+        <default></default>
+        <docblock line="24">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="29" package="Default">
+        <name>pass</name>
+        <full_name>\IceCreamPipeline\Pipeline::pass()</full_name>
+        <docblock line="29">
+          <description>Pass an item into the pipeline.</description>
+          <long-description></long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::pass()" refers="\IceCreamPipeline\Contracts\Pipeline::pass()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_pass"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="37" package="Default">
+        <name>through</name>
+        <full_name>\IceCreamPipeline\Pipeline::through()</full_name>
+        <docblock line="37">
+          <description>The pipes to pass the item, through.</description>
+          <long-description></long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::through()" refers="\IceCreamPipeline\Contracts\Pipeline::through()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_through"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$pipes</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="45" package="Default">
+        <name>withMethod</name>
+        <full_name>\IceCreamPipeline\Pipeline::withMethod()</full_name>
+        <docblock line="45">
+          <description>Optionally call a specific method that all pipes have.</description>
+          <long-description></long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::withMethod()" refers="\IceCreamPipeline\Contracts\Pipeline::withMethod()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_withMethod"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$method</name>
+          <default></default>
+          <type>\IceCreamPipeline\string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="53" package="Default">
+        <name>process</name>
+        <full_name>\IceCreamPipeline\Pipeline::process()</full_name>
+        <docblock line="53">
+          <description>Process the pipes.</description>
+          <long-description>itterate through each pipe either calling the method defined in
+`withMethod` or a predefined method on the abstract Pipe class
+called: `handle`.</long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::process()" refers="\IceCreamPipeline\Contracts\Pipeline::process()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_process"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="73" package="Default">
+        <name>getResponse</name>
+        <full_name>\IceCreamPipeline\Pipeline::getResponse()</full_name>
+        <docblock line="73">
+          <description>Get the response from the process.</description>
+          <long-description>Instead of calling `then()` you can do: `-&gt;process()-&gt;getResponse();`
+to get the response of the pipeline.</long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::getResponse()" refers="\IceCreamPipeline\Contracts\Pipeline::getResponse()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_getResponse"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="IceCreamPipeline" line="80" package="Default">
+        <name>then</name>
+        <full_name>\IceCreamPipeline\Pipeline::then()</full_name>
+        <docblock line="80">
+          <description>Optionally do something after all the pipes have finished.</description>
+          <long-description>The function takes one argument, that is the response from process
+fucntion.</long-description>
+          <tag name="inherited_from" description="\IceCreamPipeline\Contracts\Pipeline::then()" refers="\IceCreamPipeline\Contracts\Pipeline::then()" link="/classes/IceCreamPipeline.Contracts.Pipeline.html#method_then"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$func</name>
+          <default></default>
+          <type>\Closure</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="29" code="PPC:ERR-50015">Argument $item is missing from the Docblock of pass</error>
+      <error line="37" code="PPC:ERR-50015">Argument $pipes is missing from the Docblock of through</error>
+      <error line="45" code="PPC:ERR-50015">Argument $method is missing from the Docblock of withMethod</error>
+      <error line="80" code="PPC:ERR-50015">Argument $func is missing from the Docblock of then</error>
+      <error line="18" code="PPC:ERR-50007">No summary for property $item</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $pipes</error>
+      <error line="22" code="PPC:ERR-50007">No summary for property $method</error>
+      <error line="24" code="PPC:ERR-50007">No summary for property $response</error>
+    </parse_markers>
+    <source>eJy1VMFu2zAMvfsreAgQJ8iS+7KuA4IdetgwDAN2WIJElelYgCwZktwsKPzvoyy5ThwfBrTlyaZIvieSep/uq6JKEsVKtBXjCA8cNwZZ+UNUKIXCdZLU9ta93WjlDOPObjsXMAvdd3dK2av5PIE5/CoQqi5SWDCEp5UVjxIh1wYqozlaK9QRnA9lZ6lZtqRUn/0bu4DLU/o2uj4WwMCiA523CHbpwWyAs8CZgoI9oS9DcRVykQsOJbpC+wrMwRGdj5MSswUQF+Egw5zVktxOw6FgKpN4iDm+kFYh86Wcx+rIPuRw1nVbEA4n4Ypvbd4BvCOQKmvrQJSVxBIVlWEii9V9kVXCJbN9N/vI2w7Dc5IAWWXEE3MIE+GwXA98LejQGfCG3jgXjP52et7m8PxFqAKNcJnmTXSuQnL9KKkHea24E9SaisinLZEZ0YNoE1cI++Gzd8Ndx7M7NOhqo0JM8DavIBD3Ig0XHyERpnBHi7hnxrDzS+R9bBZ8hD/ha/deJPvNSK0zfvHjSEb4xm2966f2PpziI0svKThzvvjzRu8VGS8gveomPf+2Y7NBtDeRQyosPdL06kKzsdjbXfEvaU8qZPaeaJxYGM/iukO7BY2tz93N1jflG0BJ4vBq3GlQhen/QCbjfw0hON/H7de/HKt2ApOb/rV430mgiREp1b7VhrCwAyy/9idQeIK+YNqnL2EKmaZJKe1aSQSkFURDsshJj3TZiSKJHylM5qUwXHJwsJxeAMd18/a2u0h3/RnF6GofL1FCz99CMFCl243UtjYkgt4/Ajm6D23w+A40SZP8A0LtLfI=</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="IceCreamPipeline" full_name="IceCreamPipeline">
+    <namespace name="Contracts" full_name="IceCreamPipeline\Contracts"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>
