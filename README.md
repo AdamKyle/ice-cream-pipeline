@@ -19,7 +19,7 @@ I also built this to learn the pipeline pattern and how it is used and how other
 
 ## Install
 
-`composer require ice-cream/database`
+`composer require ice-cream/pipeline`
 
 ## Documentation
 
